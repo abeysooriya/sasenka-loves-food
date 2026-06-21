@@ -90,8 +90,10 @@ a:hover { color: var(--tomato); border-bottom-color: var(--tomato); }
   color: var(--ink);
 }
 .brand-mark:hover { border-bottom: none; color: var(--ink); }
-.brand-mark svg { height: 42px; width: auto; display: block; }
-.site-footer .brand-mark svg { height: 48px; }
+.brand-mark svg,
+.brand-mark img { height: 42px; width: auto; display: block; }
+.site-footer .brand-mark svg,
+.site-footer .brand-mark img { height: 48px; }
 
 .site-nav {
   display: flex;
