@@ -1,6 +1,6 @@
 {
   "generated_notes": "Snapshot of the 63 hand-edited review pages, verbatim archive cards and the current homepage blurb/thumb tuning. The build script treats these as read-only and composes them with any new CMS reviews. Regenerate with python3 _working/migrate_legacy.py if hand-edits change.",
-  "count": 71,
+  "count": 72,
   "filter_chips": {
     "cuisine_html": "<div class=\"chip-row\" role=\"group\" aria-label=\"Cuisine\">\n          <span class=\"toolbar-label\">Cuisine</span>\n          <button type=\"button\" class=\"chip is-active\" data-category=\"cuisine\" data-filter=\"all\">All</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"modern-australian\">Modern Australian</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"italian\">Italian</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"chinese\">Chinese</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"japanese\">Japanese</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"pan-asian\">Pan-Asian</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"sri-lankan\">Sri Lankan</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"mediterranean\">Mediterranean</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"french-european\">French &amp; European</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"fire-and-ocean\">Fire &amp; ocean</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"steakhouse\">Steakhouse</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"creole\">Creole</button>\n          <button type=\"button\" class=\"chip\" data-category=\"cuisine\" data-filter=\"latin-american\">Latin American</button>\n\n        </div>",
     "cuisine_filters": [
@@ -18,7 +18,7 @@
       "creole",
       "latin-american"
     ],
-    "suburb_html": "<div class=\"chip-row\" role=\"group\" aria-label=\"Place\">\n          <span class=\"toolbar-label\">Place</span>\n          <button type=\"button\" class=\"chip is-active\" data-category=\"suburb\" data-filter=\"all\">All</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"brisbane-cbd\">Brisbane CBD</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"fortitude-valley\">Fortitude Valley</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"west-end\">West End</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"james-street-newstead\">James Street &amp; Newstead</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"south-brisbane-south-bank\">South Brisbane &amp; South Bank</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"inner-suburbs\">Inner suburbs</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"sunshine-coast\">Sunshine Coast &amp; hinterland</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"australia-elsewhere\">Australia (elsewhere)</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"overseas\">Overseas</button>\n        </div>",
+    "suburb_html": "<div class=\"chip-row\" role=\"group\" aria-label=\"Place\">\n          <span class=\"toolbar-label\">Place</span>\n          <button type=\"button\" class=\"chip is-active\" data-category=\"suburb\" data-filter=\"all\">All</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"brisbane-cbd\">Brisbane CBD</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"fortitude-valley\">Fortitude Valley</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"west-end\">West End</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"james-street-newstead\">James Street &amp; Newstead</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"south-brisbane-south-bank\">South Brisbane &amp; South Bank</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"inner-suburbs\">Inner suburbs</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"sunshine-coast\">Sunshine Coast &amp; hinterland</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"australia-elsewhere\">Australia (elsewhere)</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"overseas\">Overseas</button>\n          <button type=\"button\" class=\"chip\" data-category=\"suburb\" data-filter=\"gold-coast\">Gold Coast</button>\n\n        </div>",
     "suburb_filters": [
       "all",
       "brisbane-cbd",
@@ -29,7 +29,8 @@
       "inner-suburbs",
       "sunshine-coast",
       "australia-elsewhere",
-      "overseas"
+      "overseas",
+      "gold-coast"
     ]
   },
   "reviews": [
@@ -1781,6 +1782,33 @@
       "hero_photo": "assets/reviews/2026-05-06_wellingtonroadbistro/06_wrb_steak.jpg",
       "archive_grid_html": "<a class=\"review-card archive-card\" href=\"reviews/20260506-WellingtonRoadBistro.html\"\n               data-cuisine=\"french-european\" data-suburb=\"south-brisbane-south-bank\"\n               data-date=\"2026-05-06\"\n               data-comfort=\"8.0\" data-soul=\"8.0\" data-mastery=\"8.0\" data-taste=\"8.0\" data-die=\"8.0\">\n              <div class=\"thumb\" style=\"background-image: url('assets/reviews/2026-05-06_wellingtonroadbistro/06_wrb_steak.jpg');\"></div>\n              <div class=\"body\">\n                <div class=\"meta\"><span>Woolloongabba &middot; Bistro</span><span class=\"dot\">&bull;</span><span>6 May 2026</span></div>\n                <h3>Wellington Road Bistro</h3>\n                <p class=\"blurb\">We went for a catch up. We left full. We left happy.</p>\n                <div class=\"scores-mini\">\n                  <span class=\"score-pill\">Comfort <strong>8.0</strong></span>\n                  <span class=\"score-pill\">Soul <strong>8.0</strong></span>\n                  <span class=\"score-pill\">Mastery <strong>8.0</strong></span>\n                  <span class=\"score-pill\">Taste <strong>8.0</strong></span>\n                  <span class=\"score-pill die-happy\">Die happy <strong>8.0</strong></span>\n                </div>\n              </div>\n            </a>",
       "archive_list_html": "<a class=\"archive-row archive-card\" href=\"reviews/20260506-WellingtonRoadBistro.html\"\n               data-cuisine=\"french-european\" data-suburb=\"south-brisbane-south-bank\"\n               data-date=\"2026-05-06\"\n               data-comfort=\"8.0\" data-soul=\"8.0\" data-mastery=\"8.0\" data-taste=\"8.0\" data-die=\"8.0\">\n              <div>\n                <div class=\"row-title\">Wellington Road Bistro</div>\n                <div class=\"row-sub\">6 May 2026</div>\n              </div>\n              <div class=\"row-cuisine\">Bistro</div>\n              <div class=\"row-suburb\">Woolloongabba</div>\n              <div class=\"row-scores\">\n                <span class=\"rs\">Comfort <strong>8.0</strong></span>\n                <span class=\"rs\">Soul <strong>8.0</strong></span>\n                <span class=\"rs\">Mastery <strong>8.0</strong></span>\n                <span class=\"rs\">Taste <strong>8.0</strong></span>\n                <span class=\"rs die\">Die happy <strong>8.0</strong></span>\n              </div>\n            </a>"
+    },
+    {
+      "slug": "20260520-UncleSu",
+      "href": "reviews/20260520-UncleSu.html",
+      "date": "2026-05-20",
+      "cuisine_slug": "chinese",
+      "suburb_slug": "gold-coast",
+      "scores": {
+        "comfort": 8.0,
+        "soul": 8.5,
+        "mastery": 8.5,
+        "taste": 8.0,
+        "die_happy": 7.5
+      },
+      "restaurant_name": "Uncle Su",
+      "blurb": "You walk past the pokies, past the blackjack tables, and somehow end up at one of the better Cantonese meals you'll have on the Gold Coast.",
+      "suburb_display": "Broadbeach",
+      "cuisine_display": "Cantonese",
+      "thumb": "assets/reviews/2026-05-20_unclesu/01_unclesu_duck.jpg",
+      "homepage_thumb": "assets/reviews/2026-05-20_unclesu/01_unclesu_duck.jpg",
+      "homepage_blurb": "You walk past the pokies, past the blackjack tables, and somehow end up at one of the better Cantonese meals you'll have on the Gold Coast.",
+      "homepage_position": "grid",
+      "instagram_handle": "_unclesu",
+      "meta_description": "Tucked inside The Star Gold Coast, Uncle Su feels like a proper Cantonese restaurant that just happens to share a postcode with the slot machines. The roast duck and the enoki mushroom dumplings carry the lunch.",
+      "hero_photo": "assets/reviews/2026-05-20_unclesu/01_unclesu_duck.jpg",
+      "archive_grid_html": "<a class=\"review-card archive-card\" href=\"reviews/20260520-UncleSu.html\"\n               data-cuisine=\"chinese\" data-suburb=\"gold-coast\"\n               data-date=\"2026-05-20\"\n               data-comfort=\"8.0\" data-soul=\"8.5\" data-mastery=\"8.5\" data-taste=\"8.0\" data-die=\"7.5\">\n              <div class=\"thumb\" style=\"background-image: url('assets/reviews/2026-05-20_unclesu/01_unclesu_duck.jpg');\"></div>\n              <div class=\"body\">\n                <div class=\"meta\"><span>Broadbeach &middot; Cantonese</span><span class=\"dot\">&bull;</span><span>20 May 2026</span></div>\n                <h3>Uncle Su</h3>\n                <p class=\"blurb\">You walk past the pokies, past the blackjack tables, and somehow end up at one of the better Cantonese meals you'll have on the Gold Coast.</p>\n                <div class=\"scores-mini\">\n                  <span class=\"score-pill\">Comfort <strong>8.0</strong></span>\n                  <span class=\"score-pill\">Soul <strong>8.5</strong></span>\n                  <span class=\"score-pill\">Mastery <strong>8.5</strong></span>\n                  <span class=\"score-pill\">Taste <strong>8.0</strong></span>\n                  <span class=\"score-pill die-happy\">Die happy <strong>7.5</strong></span>\n                </div>\n              </div>\n            </a>",
+      "archive_list_html": "<a class=\"archive-row archive-card\" href=\"reviews/20260520-UncleSu.html\"\n               data-cuisine=\"chinese\" data-suburb=\"gold-coast\"\n               data-date=\"2026-05-20\"\n               data-comfort=\"8.0\" data-soul=\"8.5\" data-mastery=\"8.5\" data-taste=\"8.0\" data-die=\"7.5\">\n              <div>\n                <div class=\"row-title\">Uncle Su</div>\n                <div class=\"row-sub\">20 May 2026</div>\n              </div>\n              <div class=\"row-cuisine\">Cantonese</div>\n              <div class=\"row-suburb\">Broadbeach</div>\n              <div class=\"row-scores\">\n                <span class=\"rs\">Comfort <strong>8.0</strong></span>\n                <span class=\"rs\">Soul <strong>8.5</strong></span>\n                <span class=\"rs\">Mastery <strong>8.5</strong></span>\n                <span class=\"rs\">Taste <strong>8.0</strong></span>\n                <span class=\"rs die\">Die happy <strong>7.5</strong></span>\n              </div>\n            </a>"
     }
   ]
 }
