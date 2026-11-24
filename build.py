@@ -345,6 +345,22 @@ CMS_PAGE_TEMPLATE = """<!doctype html>
   <link rel="shortcut icon" href="../favicon.ico">
   <title>{title}</title>
   <meta name="description" content="{meta_desc}">
+  <!-- SEO:START -->
+  <link rel="canonical" href="{canonical_url}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sasenka Loves Food">
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{meta_desc}">
+  <meta property="og:url" content="{canonical_url}">
+  <meta property="og:image" content="{og_image}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{meta_desc}">
+  <meta name="twitter:image" content="{og_image}">
+  <script type="application/ld+json">
+{json_ld}
+  </script>
+  <!-- SEO:END -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -462,10 +478,69 @@ def render_cms_review_page(r: dict) -> str:
             '      </section>\n'
         )
 
+    CITY_FOR_SUBURB = {
+        "brisbane-cbd": "Brisbane", "fortitude-valley": "Brisbane",
+        "west-end": "Brisbane", "james-street-newstead": "Brisbane",
+        "south-brisbane-south-bank": "Brisbane", "inner-suburbs": "Brisbane",
+        "sunshine-coast": "Queensland", "gold-coast": "Queensland",
+    }
+    ADDR_FOR_SUBURB = {
+        "brisbane-cbd": ("QLD", "AU"), "fortitude-valley": ("QLD", "AU"),
+        "west-end": ("QLD", "AU"), "james-street-newstead": ("QLD", "AU"),
+        "south-brisbane-south-bank": ("QLD", "AU"), "inner-suburbs": ("QLD", "AU"),
+        "sunshine-coast": ("QLD", "AU"), "gold-coast": ("QLD", "AU"),
+        "australia-elsewhere": (None, "AU"),
+    }
+    sub = r["suburb_display"]
+    city = CITY_FOR_SUBURB.get(r.get("suburb_slug", ""), "")
+    place = f"{sub}, {city}" if city else sub
+    seo_title = f"{r['restaurant_name']} review \u2014 {place} | Sasenka Loves Food"
+    raw_desc = (r.get("meta_description") or r.get("tagline") or "").strip()
+    if "@" in raw_desc:
+        raw_desc = ""
+    seo_desc = f"Honest restaurant review of {r['restaurant_name']} in {place}."
+    if raw_desc:
+        seo_desc = f"{seo_desc} {raw_desc}"
+    if len(seo_desc) > 158:
+        seo_desc = seo_desc[:155].rstrip() + "..."
+
+    canonical_url = f"{SITE_URL}/reviews/{r['slug']}.html"
+    hero = (r.get("hero_photo") or "").lstrip("/")
+    og_image = f"{SITE_URL}/{hero}" if hero else f"{SITE_URL}/assets/favicon.svg"
+
+    region, country = ADDR_FOR_SUBURB.get(r.get("suburb_slug", ""), (None, None))
+    address = {"@type": "PostalAddress", "addressLocality": sub}
+    if region: address["addressRegion"] = region
+    if country: address["addressCountry"] = country
+    scores = r.get("scores") or {}
+    vals = [v for v in scores.values() if isinstance(v, (int, float))]
+    avg = round(sum(vals) / len(vals), 1) if vals else None
+    ld: dict = {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "Restaurant",
+            "name": r["restaurant_name"],
+            "address": address,
+            **({"servesCuisine": r["cuisine_display"]} if r.get("cuisine_display") else {}),
+        },
+        "author": {"@type": "Person", "name": "Sasenka"},
+        "publisher": {"@type": "Organization", "name": "Sasenka Loves Food"},
+    }
+    if r.get("date_iso"): ld["datePublished"] = r["date_iso"]
+    if raw_desc: ld["reviewBody"] = raw_desc[:500]
+    if avg is not None:
+        ld["reviewRating"] = {"@type": "Rating", "ratingValue": str(avg), "bestRating": "10", "worstRating": "1"}
+    import json as _json
+    json_ld = _json.dumps(ld, ensure_ascii=False, indent=2)
+
     return CMS_PAGE_TEMPLATE.format(
         marker=f"<!-- GENERATED FROM data/reviews/{r['slug']}.json. Edit in the CMS. -->",
-        title=esc(f"{r['restaurant_name']}, {r['suburb_display']} \u00b7 Sasenka Loves Food"),
-        meta_desc=esc(r.get("meta_description", r.get("tagline", ""))),
+        title=esc(seo_title),
+        meta_desc=esc(seo_desc),
+        canonical_url=canonical_url,
+        og_image=og_image,
+        json_ld=json_ld,
         hero_caption=esc(r.get("hero_caption", "")),
         hero_photo=r["hero_photo"],
         month_label=month_label(r["date_iso"]),
